@@ -1,0 +1,239 @@
+.browsehappy {
+    background: #ccc;
+    color: #000;
+    margin: 0.2em 0;
+    padding: 0.2em 0;
+}
+
+html {
+    background-color: #000;
+    height: 100%;
+    &.ios {
+        overflow: hidden;
+    }
+    &.image_1 {
+        background: url(/images/bg/0.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_2 {
+        background: url(/images/bg/2.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_3 {
+        background: url(/images/bg/3.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_4 {
+        background: url(/images/bg/4.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_5 {
+        background: url(/images/bg/5.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_6 {
+        background: url(/images/bg/6.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_7 {
+        background: url(/images/bg/7.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_8 {
+        background: url(/images/bg/8.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+    &.image_9 {
+        background: url(/images/bg/9.jpg) no-repeat center center;
+        @include background-size('cover');
+        background-attachment: fixed;
+    }
+}
+
+body {
+    background: transparent;
+    height: 100%;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+._bg {
+	position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+.container {
+    @include transform( translate3d(0, 0, 0));
+    position: relative;
+}
+
+.gradient-bg {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+10,000000+94,000000+100&0+0,0.25+10,0.25+90,0+100 */
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 10%, rgba(0, 0, 0, 0.25) 90%, rgba(0, 0, 0, 0.15) 94%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 10%, rgba(0, 0, 0, 0.25) 90%, rgba(0, 0, 0, 0.15) 94%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 10%, rgba(0, 0, 0, 0.25) 90%, rgba(0, 0, 0, 0.15) 94%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000', GradientType=1);
+    /* IE6-9 */
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.form-control {
+    @include box-shadow(0 0 25px 0 rgba(0, 0, 0, 0.75));
+    border: 0
+}
+
+.contact {
+    .btn {
+        @include box-shadow(0 0 25px 0 rgba(0, 0, 0, 0.75));
+    }
+}
+
+.header {
+    @include transform( translate3d(0, 0, 0));
+    margin-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    .navbar {
+        //@include border-radius(0);
+        //@include box-shadow(0 0 25px 0 rgba(0, 0, 0, 0.75));
+        .nav {
+            text-align: center;
+        }
+    }
+}
+
+.navbar-nav > .active > a {
+    background-color: transparent !important;
+    font-weight: 700;
+}
+
+/* Make the masthead heading the same height as the navigation */
+
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+.main {
+    padding-top: 80px;
+}
+
+
+/* Custom page footer */
+
+.home {
+    padding: 20px;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    h2 {
+        margin-top: 10px;
+    }
+}
+
+.footer {
+    padding-top: 19px;
+    color: #777;
+}
+
+.main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    //position: relative;
+    width: 100%;
+    display: block;
+}
+
+.main.ng-enter,
+.main.ng-leave {
+    @include transition(left 1s ease);
+}
+
+.main.ng-enter {
+    left: 100%;
+}
+
+.main.ng-enter-active {
+    left: 0;
+}
+
+.main.ng-leave {
+    left: 0;
+}
+
+.main.ng-leave-active {
+    left: -100%;
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        margin: 0 30px;
+    }
+    .header {
+        .navbar {
+            .nav {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.achievements ul li {
+    list-style-type: circle;
+    margin: 20px;
+}
+
+
+/* Main marketing message and sign up button */
+
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .container {
+        width: 100% !important;
+    }
+    .header {
+        .navbar {
+            .nav {
+                width: auto;
+            }
+        }
+    }
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+}

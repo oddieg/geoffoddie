@@ -1,0 +1,19 @@
+.achievements,
+.developer {
+	.white-box {
+		//@include box-shadow(0 0 25px 0 rgba(0,0,0, 0.75));
+		//@include border-radius(3px);
+		background-color: #fff;
+		//margin: 30px;
+		margin-bottom: 30px;
+		padding: 20px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.achievements,
+	.developer {
+		.white-box {
+			margin: 0 30px 30px 30px;
+		}
+	}
+}

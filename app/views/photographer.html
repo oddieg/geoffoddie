@@ -1,0 +1,19 @@
+<div class="gallery">
+	<div class="text-center row panel-heading">
+		<h1 class="c-white f-bold f-62 lh-70" ng-if="browsers.desktop">Photographer</h1>
+			<h1 class="c-white f-bold f-36 lh-40" ng-if="browsers.mobile">Photographer</h1>
+			<h1 class="c-white f-bold f-48 lh-52" ng-if="browsers.tablet">Photographer</h1>
+	</div>
+
+	<div class="container">
+		<div masonry reload-on-show ng-show="photos" class="masonry" masonry-options="{ hiddenStyle : { opacity: 0, transform: 'scale(0.001)' }, visibleStyle : { opacity: 1, transform: 'scale(1)' } }">
+			<div class="masonry-brick" ng-class="{larger : photo.larger}" ng-repeat="photo in photos">
+				<div class="photo-wrapper">
+					<div class="photo" ripple ng-click="handleClick('{{photo.id}}')">
+							<img ng-src="images/thumbs/{{photo.thumb}}" alt="Photo of {{photo.title}}" title="Photo of {{photo.title}}">
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+</div>

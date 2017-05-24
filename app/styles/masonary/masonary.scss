@@ -1,0 +1,102 @@
+ 	.masonry {
+	margin: 0 auto;
+	padding: 0;
+
+	.masonry-brick {
+		@include transform( translate3d(0, 0, 0));
+		@include opacity(0);
+
+		padding:8px;
+		width: 20%;
+		&.larger {
+			width: 40%;
+		}
+		.photo-wrapper {
+			background: #fff url(/images/spinner.gif) center center no-repeat;
+			.photo {
+				img {
+					@include opacity(0);
+					@include transition-delay(0.6s);
+					width: 100%;
+				}
+			}
+		}
+		&.loaded {
+			@include opacity(1);
+			.photo-wrapper {
+				@include box-shadow(0 0 25px 0 rgba(0,0,0, 0.75));
+
+				// border:1px solid rgba(0, 0, 0, .15);
+				//@include border-radius(3px);
+				position: relative;
+				.photo {
+					//margin: 12px;
+					line-height: 0;
+					padding: 8px;
+					min-height:40px;
+					img {
+						@include border-radius(3px);
+						@include opacity(1);
+					}
+
+				}
+			}
+		}
+	}
+
+
+}
+
+
+@media screen and (max-width: 1025px) {
+	.masonry {
+		width: 100%;
+		.masonry-brick {
+			width: 25%;
+			&.larger {
+				width: 50%;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 840px) {
+	.masonry {
+		width: 100%;
+		.masonry-brick {
+			width: 33%;
+			&.larger {
+				width: 66%;
+			}
+		}
+	}
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.masonry {
+		width: 100%;
+		.masonry-brick {
+			width:  50%;
+			&.larger {
+				width: 50%;
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-device-width: 320px),
+only screen and (max-width: 480px) {
+	.masonry {
+		width: 100%;
+		.masonry-brick {
+			width:  100%;
+			&.larger {
+				width: 100%;
+			}
+		}
+	}
+
+}

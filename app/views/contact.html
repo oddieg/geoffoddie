@@ -1,0 +1,42 @@
+<div class="content text-center row contact" >
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel-heading">
+			<h1 class="c-white f-bold f-62 lh-70" ng-if="browsers.desktop">Contact Form</h1>
+			<h1 class="c-white f-bold f-36 lh-40" ng-if="browsers.mobile">Contact Form</h1>
+			<h1 class="c-white f-bold f-48 lh-52" ng-if="browsers.tablet">Contact Form</h1>
+		</div>
+
+		<div class="panel-body">
+			<form ng-submit="submit(contactform)" name="contactform" method="post" action="" class="form-horizontal" role="form" onSubmit="return false;">
+				<div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
+	<!-- 				<label for="inputName" class="col-lg-2 control-label">Name</label> -->
+					<div>
+						<input ng-model="formData.inputName" type="text" class="form-control f-thin" id="inputName" name="inputName" placeholder="Your Name" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+					<!-- <label for="inputEmail" class="col-lg-2 control-label">Email</label> -->
+					<div>
+						<input ng-model="formData.inputEmail" type="email" class="form-control f-thin" id="inputEmail" name="inputEmail" placeholder="Your Email" required>
+					</div>
+				</div>
+
+				<div class="form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
+					<!-- <label for="inputMessage" class="col-lg-2 control-label">Message</label> -->
+					<div>
+						<textarea ng-model="formData.inputMessage" class="form-control f-thin" rows="4" id="inputMessage" name="inputMessage" placeholder="Your message..." required></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-offset-2 col-lg-8">
+						<button type="submit" class="btn btn-default f-thin f-18" ng-disabled="submitButtonDisabled">
+							Send Message
+						</button>
+					</div>
+				</div>
+			</form>
+			<p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
+		</div>
+
+	</div>
+</div>
